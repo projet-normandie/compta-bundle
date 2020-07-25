@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Donation
  *
  * @ORM\Table(name="cpt_donation")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="ProjetNormandie\ComptaBundle\Repository\DonationRepository")
  */
 class Donation implements TimestampableInterface
 {

@@ -1,0 +1,14 @@
+ProjetNormandie\ComptaBundle\Entity\Donation:
+  attributes:
+    id:
+      groups:
+        - 'donation.read'
+        - 'donation.list'
+    value:
+      groups:
+        - 'donation.read'
+        - 'donation.list'
+    dateDonation:
+      groups:
+        - 'donation.read'
+        - 'donation.list'

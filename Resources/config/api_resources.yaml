@@ -1,0 +1,15 @@
+resources:
+    ProjetNormandie\ComptaBundle\Entity\Donation:
+        collectionOperations:
+            get:
+                normalization_context: {'groups': [donation.list]}
+        itemOperations:
+            get:
+                normalization_context: {'groups': [donation.read]}
+            donors:
+                method: 'GET'
+                normalization_context: {'groups': [don.user.read]}
+                path: '/donations-donors'
+                controller: 'ProjetNormandie\ComptaBundle\Controller\DonationController::donors'
+                defaults:
+                    _api_receive: false

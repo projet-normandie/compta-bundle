@@ -1,0 +1,11 @@
+ProjetNormandie\UserBundle\Entity\User:
+  attributes:
+    id:
+      groups:
+        - 'don.user.read'
+    username:
+      groups:
+        - 'don.user.read'
+    avatar:
+      groups:
+        - 'don.user.read'

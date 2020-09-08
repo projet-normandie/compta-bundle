@@ -74,7 +74,7 @@ class Type
     }
 
     /**
-     * @inheritDoc
+     * @return string
      */
     public function __toString()
     {

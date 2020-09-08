@@ -2,7 +2,6 @@
 namespace ProjetNormandie\ComptaBundle\Admin;
 
 use Sonata\AdminBundle\Admin\AbstractAdmin;
-use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
@@ -12,7 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 class TypeAdmin extends AbstractAdmin
 {
     /**
-     * @inheritDoc
+     * @param RouteCollection $collection
      */
     protected function configureRoutes(RouteCollection $collection)
     {
@@ -23,7 +22,7 @@ class TypeAdmin extends AbstractAdmin
     }
 
     /**
-     * @inheritDoc
+     * @param FormMapper $form
      */
     protected function configureFormFields(FormMapper $form)
     {
@@ -33,15 +32,9 @@ class TypeAdmin extends AbstractAdmin
                 'required' => true,
             ]);
     }
-    /**
-     * @inheritDoc
-     */
-    protected function configureDatagridFilters(DatagridMapper $filter)
-    {
 
-    }
     /**
-     * @inheritDoc
+     * @param ListMapper $list
      */
     protected function configureListFields(ListMapper $list)
     {
@@ -54,8 +47,9 @@ class TypeAdmin extends AbstractAdmin
                 ]
             ]);
     }
+
     /**
-     * @inheritDoc
+     * @param ShowMapper $show
      */
     protected function configureShowFields(ShowMapper $show)
     {

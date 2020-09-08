@@ -11,7 +11,11 @@ class DonationRepository extends EntityRepository
     {
         $rsm = new ResultSetMappingBuilder($this->_em);
         $rsm->addRootEntityFromClassMetadata('ProjetNormandie\ComptaBundle\Entity\UserInterface', 'u');
-        $query = $this->_em->createNativeQuery("SELECT distinct user.id, user.username, user.avatar FROM cpt_donation INNER JOIN user ON cpt_donation.idUser = user.id ORDER BY user.id DESC", $rsm);
+        $query = $this->_em->createNativeQuery(
+            "SELECT distinct user.id, user.username, user.avatar 
+            FROM cpt_donation INNER JOIN user ON cpt_donation.idUser = user.id ORDER BY user.id DESC",
+            $rsm
+        );
 
         return $query->getResult();
     }

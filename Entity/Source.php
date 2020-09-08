@@ -74,7 +74,7 @@ class Source
     }
 
     /**
-     * @inheritDoc
+     * @return string
      */
     public function __toString()
     {

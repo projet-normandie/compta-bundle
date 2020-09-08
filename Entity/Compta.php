@@ -5,7 +5,6 @@ namespace ProjetNormandie\ComptaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Contract\Entity\TimestampableInterface;
 use Knp\DoctrineBehaviors\Model\Timestampable\TimestampableTrait;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Donation
@@ -27,7 +26,7 @@ class Compta implements TimestampableInterface
     private $id;
 
     /**
-     * @var decimal
+     * @var double
      *
      * @ORM\Column(name="value", type="decimal")
      */
@@ -171,7 +170,7 @@ class Compta implements TimestampableInterface
     }
 
     /**
-     * @inheritDoc
+     * @return string
      */
     public function __toString()
     {

@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Contract\Entity\TimestampableInterface;
 use Knp\DoctrineBehaviors\Model\Timestampable\TimestampableTrait;
 use Symfony\Component\Validator\Constraints as Assert;
+use DateTime;
 
 /**
  * Donation
@@ -27,14 +28,15 @@ class Donation implements TimestampableInterface
     private $id;
 
     /**
-     * @var decimal
+     * @var double
      *
+     * @Assert\NotNull
      * @ORM\Column(name="value", type="decimal")
      */
     private $value;
 
     /**
-     * @var \DateTime
+     * @var DateTime
      *
      * @ORM\Column(name="dateDonation", type="datetime", nullable=false)
      */
@@ -44,7 +46,7 @@ class Donation implements TimestampableInterface
      * @var UserInterface
      * @ORM\ManyToOne(targetEntity="ProjetNormandie\ComptaBundle\Entity\UserInterface", fetch="EAGER"))
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idUser", referencedColumnName="id", nullable=false)
+     *   @ORM\JoinColumn(name="idUser", referencedColumnName="id", nullable=true)
      * })
      */
     private $user;
@@ -75,7 +77,7 @@ class Donation implements TimestampableInterface
     /**
      * Get value
      *
-     * @return integer
+     * @return double
      */
     public function getValue()
     {
@@ -97,7 +99,7 @@ class Donation implements TimestampableInterface
 
     /**
      * Get dateDonation
-     * @return \DateTime
+     * @return DateTime
      */
     public function getDateDonation()
     {
@@ -107,7 +109,7 @@ class Donation implements TimestampableInterface
     /**
      * Set dateDonation
      *
-     * @param \DateTime $dateDonation
+     * @param DateTime $dateDonation
      * @return $this
      */
     public function setDateDonation($dateDonation)
@@ -136,11 +138,12 @@ class Donation implements TimestampableInterface
         $this->user = $user;
         return $this;
     }
+
     /**
-     * @inheritDoc
+     * @return string
      */
     public function __toString()
     {
-        return sprintf('[%d]',$this->getId());
+        return sprintf('[%d]', $this->getId());
     }
 }

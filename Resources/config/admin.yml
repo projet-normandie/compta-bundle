@@ -1,0 +1,33 @@
+services:
+    sonata.admin.compta.type:
+        class: ProjetNormandie\ComptaBundle\Admin\TypeAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "group.compta", label: "label.type" }
+        arguments:
+            - ~
+            - ProjetNormandie\ComptaBundle\Entity\Type
+            - ~
+    sonata.admin.compta.source:
+        class: ProjetNormandie\ComptaBundle\Admin\SourceAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "group.compta", label: "label.source" }
+        arguments:
+            - ~
+            - ProjetNormandie\ComptaBundle\Entity\Source
+            - ~
+    sonata.admin.compta.donation:
+        class: ProjetNormandie\ComptaBundle\Admin\DonationAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "group.compta", label: "label.donation" }
+        arguments:
+            - ~
+            - ProjetNormandie\ComptaBundle\Entity\Donation
+            - ~
+    sonata.admin.compta.compta:
+        class: ProjetNormandie\ComptaBundle\Admin\ComptaAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "group.compta", label: "label.compta" }
+        arguments:
+            - ~
+            - ProjetNormandie\ComptaBundle\Entity\Compta
+            - ~

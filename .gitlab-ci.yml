@@ -29,7 +29,7 @@ phpunit:7.2:
 
 .base-deploy:
   variables:
-    PROJECT_DIR: $DIRECTORY_PN_BUNDLES/ComptaBundle/
+    PROJECT_DIR: /home/deploy/projects/bundles/ProjetNormandie/ComptaBundle/
   before_script:
     - apk update && apk upgrade
     - apk add openssh bash rsync
@@ -50,5 +50,6 @@ deploy-pp:
   stage: deploy-preprod
   environment:
     name: testing
+    url: https://api.projet-normandie.fr/
   only:
     - develop

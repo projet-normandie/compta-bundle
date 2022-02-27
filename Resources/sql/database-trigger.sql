@@ -13,9 +13,6 @@ BEGIN
         WHERE a.idType = 1
         AND a.month = SUBSTRING(NEW.dateDonation,1,7);
 	END IF;
-	/*UPDATE user
-	SET cpt_donation_value = (SELECT SUM(value) FROM cpt_donation WHERE id = NEW.idUser)
-	WHERE id = NEW.idUser;*/
 END //
 delimiter ;
 
@@ -28,10 +25,6 @@ BEGIN
     SET value = (SELECT SUM(value) FROM cpt_donation WHERE SUBSTRING(dateDonation,1,7) = SUBSTRING(NEW.dateDonation,1,7))
     WHERE a.idType = 1
     AND a.month = SUBSTRING(NEW.dateDonation,1,7);
-
-    /*UPDATE user
-	SET cpt_donation_value = (SELECT SUM(value) FROM cpt_donation WHERE id = NEW.idUser)
-	WHERE id = NEW.idUser;*/
 END //
 delimiter ;
 
@@ -44,10 +37,6 @@ BEGIN
     SET value = (SELECT SUM(value) FROM cpt_donation WHERE SUBSTRING(dateDonation,1,7) = SUBSTRING(OLD.dateDonation,1,7))
     WHERE a.idType = 1
     AND a.month = SUBSTRING(OLD.dateDonation,1,7);
-
-    /*UPDATE user
-	SET cpt_donation_value = (SELECT SUM(value) FROM cpt_donation WHERE id = OLD.idUser)
-	WHERE id = OLD.idUser;*/
 END //
 delimiter ;
 

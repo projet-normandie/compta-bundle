@@ -3,6 +3,7 @@
 namespace ProjetNormandie\ComptaBundle\Admin;
 
 use Sonata\AdminBundle\Admin\AbstractAdmin;
+use Sonata\AdminBundle\Route\RouteCollectionInterface;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
@@ -23,7 +24,7 @@ class DonationAdmin extends AbstractAdmin
     /**
      * @param RouteCollection $collection
      */
-    protected function configureRoutes(RouteCollection $collection)
+    protected function configureRoutes(RouteCollectionInterface $collection): void
     {
         $collection
             ->remove('show')
@@ -32,11 +33,11 @@ class DonationAdmin extends AbstractAdmin
     }
 
     /**
-     * @param FormMapper $formMapper
+     * @param FormMapper $form
      */
-    protected function configureFormFields(FormMapper $formMapper)
+    protected function configureFormFields(FormMapper $form): void
     {
-        $formMapper
+        $form
             ->add('id', TextType::class, ['label' => 'id', 'attr' => ['readonly' => true]])
             ->add('user', ModelListType::class, [
                 'btn_add' => false,
@@ -57,22 +58,22 @@ class DonationAdmin extends AbstractAdmin
     }
 
     /**
-     * @param DatagridMapper $datagridMapper
+     * @param DatagridMapper $filter
      */
-    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    protected function configureDatagridFilters(DatagridMapper $filter): void
     {
-        $datagridMapper
+        $filter
             ->add('user', ModelAutocompleteFilter::class, [], null, [
                 'property' => 'username',
             ]);
     }
 
     /**
-     * @param ListMapper $listMapper
+     * @param ListMapper $list
      */
-    protected function configureListFields(ListMapper $listMapper)
+    protected function configureListFields(ListMapper $list): void
     {
-        $listMapper->addIdentifier('id')
+        $list->addIdentifier('id')
             ->add('user')
             ->add('dateDonation', 'datetime', ['label' => 'Donated At'])
             ->add('value')
@@ -85,11 +86,11 @@ class DonationAdmin extends AbstractAdmin
     }
 
     /**
-     * @param ShowMapper $showMapper
+     * @param ShowMapper $show
      */
-    protected function configureShowFields(ShowMapper $showMapper)
+    protected function configureShowFields(ShowMapper $show): void
     {
-        $showMapper
+        $show
             ->add('id')
             ->add('dateDonation', 'datetime', ['label' => 'Donated At'])
             ->add('value');

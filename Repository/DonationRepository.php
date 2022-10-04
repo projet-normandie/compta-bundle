@@ -2,11 +2,18 @@
 
 namespace ProjetNormandie\ComptaBundle\Repository;
 
-use Doctrine\ORM\EntityRepository;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Query\ResultSetMappingBuilder;
+use Doctrine\Persistence\ManagerRegistry;
+use ProjetNormandie\ComptaBundle\Entity\Donation;
 
-class DonationRepository extends EntityRepository
+class DonationRepository extends ServiceEntityRepository
 {
+    public function __construct(ManagerRegistry $registry)
+    {
+        parent::__construct($registry, Donation::class);
+    }
+
     public function getDonors()
     {
         $rsm = new ResultSetMappingBuilder($this->_em);

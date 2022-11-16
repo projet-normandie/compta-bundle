@@ -1,3 +1,14 @@
+ProjetNormandieEComptaBundle
+===========================
+
+Develop
+-------
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/projet-normandie/compta-bundle/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/projet-normandie/compta-bundle/?branch=develop)
+[![Build Status](https://scrutinizer-ci.com/g/projet-normandie/compta-bundle/badges/build.png?b=develop)]()
+
+
+
 Installation
 ============
 

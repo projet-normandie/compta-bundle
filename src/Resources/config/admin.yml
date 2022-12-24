@@ -2,20 +2,36 @@ services:
     sonata.admin.compta.type:
         class: ProjetNormandie\ComptaBundle\Admin\TypeAdmin
         tags:
-            - { name: sonata.admin, model_class: 'ProjetNormandie\ComptaBundle\Entity\Type', manager_type: orm, group: "group.compta", label: "label.type" }
-        arguments: [ ~, ~, ~ ]
+            -
+                name: sonata.admin
+                model_class: 'ProjetNormandie\ComptaBundle\Entity\Type'
+                manager_type: orm
+                group: "group.compta"
+                label: "label.type"
     sonata.admin.compta.source:
         class: ProjetNormandie\ComptaBundle\Admin\SourceAdmin
         tags:
-            - { name: sonata.admin, model_class: 'ProjetNormandie\ComptaBundle\Entity\Source', manager_type: orm, group: "group.compta", label: "label.source" }
-        arguments: [ ~, ~, ~ ]
+            -
+                name: sonata.admin
+                model_class: 'ProjetNormandie\ComptaBundle\Entity\Source'
+                manager_type: orm
+                group: "group.compta"
+                label: "label.source"
     sonata.admin.compta.donation:
         class: ProjetNormandie\ComptaBundle\Admin\DonationAdmin
         tags:
-            - { name: sonata.admin, model_class: 'ProjetNormandie\ComptaBundle\Entity\Donation', manager_type: orm, group: "group.compta", label: "label.donation" }
-        arguments: [ ~, ~, ~ ]
+            -
+                name: sonata.admin
+                model_class: 'ProjetNormandie\ComptaBundle\Entity\Donation'
+                manager_type: orm
+                group: "group.compta"
+                label: "label.donation"
     sonata.admin.compta.compta:
         class: ProjetNormandie\ComptaBundle\Admin\ComptaAdmin
         tags:
-            - { name: sonata.admin, model_class: 'ProjetNormandie\ComptaBundle\Entity\Compta', manager_type: orm, group: "group.compta", label: "label.compta" }
-        arguments: [ ~, ~, ~ ]
+            -
+                name: sonata.admin
+                model_class: 'ProjetNormandie\ComptaBundle\Entity\Compta'
+                manager_type: orm
+                group: "group.compta"
+                label: "label.compta"

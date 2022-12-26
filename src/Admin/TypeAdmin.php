@@ -29,7 +29,7 @@ class TypeAdmin extends AbstractAdmin
     {
         $form
             ->add('label', TextType::class, [
-                'label' => 'Label',
+                'label' => 'label.label',
                 'required' => true,
             ]);
     }
@@ -40,8 +40,8 @@ class TypeAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $list): void
     {
         $list
-            ->addIdentifier('id')
-            ->add('label')
+            ->addIdentifier('id', null, ['label' => 'label.id'])
+            ->add('label', null, ['label' => 'label.label'])
             ->add('_action', 'actions', [
                 'actions' => [
                     'edit' => [],
@@ -55,7 +55,7 @@ class TypeAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $show): void
     {
         $show
-            ->add('id')
-            ->add('label');
+            ->add('id', null, ['label' => 'label.id'])
+            ->add('label', null, ['label' => 'label.label']);
     }
 }

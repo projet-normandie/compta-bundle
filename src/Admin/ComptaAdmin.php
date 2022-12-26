@@ -35,13 +35,11 @@ class ComptaAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form): void
     {
         $form
-            ->add('id', TextType::class, ['label' => 'id', 'attr' => ['readonly' => true]])
-            ->add('month', TextType::class)
-            ->add('source')
-            ->add('type')
-            ->add(
-                'value'
-            );
+            ->add('id', TextType::class, ['label' => 'label.id', 'attr' => ['readonly' => true]])
+            ->add('month', TextType::class, ['label' => 'label.month'])
+            ->add('source', null, ['label' => 'label.source'])
+            ->add('type', null, ['label' => 'label.type'])
+            ->add('value', null, ['label' => 'label.value']);
     }
 
     /**
@@ -50,9 +48,9 @@ class ComptaAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $filter): void
     {
         $filter
-            ->add('source')
-            ->add('type')
-            ->add('month');
+            ->add('source', null, ['label' => 'label.source'])
+            ->add('type', null, ['label' => 'label.type'])
+            ->add('month', null, ['label' => 'label.month']);
     }
 
     /**
@@ -60,11 +58,11 @@ class ComptaAdmin extends AbstractAdmin
      */
     protected function configureListFields(ListMapper $list): void
     {
-        $list->addIdentifier('id')
-            ->add('month')
-            ->add('source')
-            ->add('type')
-            ->add('value')
+        $list->addIdentifier('id', null, ['label' => 'label.id'])
+            ->add('month', null, ['label' => 'label.month'])
+            ->add('source', null, ['label' => 'label.source'])
+            ->add('type', null, ['label' => 'label.type'])
+            ->add('value', null, ['label' => 'label.value'])
             ->add('_action', 'actions', [
                 'actions' => [
                     'show' => [],
@@ -79,9 +77,9 @@ class ComptaAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $show): void
     {
         $show
-            ->add('id')
-            ->add('month')
-            ->add('source')
-            ->add('type');
+            ->add('id', null, ['label' => 'label.id'])
+            ->add('month', null, ['label' => 'label.month'])
+            ->add('source', null, ['label' => 'label.source'])
+            ->add('type', null, ['label' => 'label.type']);
     }
 }

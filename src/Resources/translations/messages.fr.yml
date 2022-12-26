@@ -1,5 +1,17 @@
+breadcrumb:
+    link_type_list: 'Type list'
+    link_source_list: 'Source list'
+    link_donation_list: 'Don list'
+    link_compta_list: 'Comptabilité'
 label:
+    compta: 'Comptabilité'
+    donatedAt: 'Donné le'
+    donation: 'Donation'
+    id: 'id'
+    label: 'Label'
+    month: 'mois'
     source: 'Source'
     type: 'Type'
-    donation: 'Donations'
-    compta: 'Comptability'
+    user: 'Utilisateur'
+    value: 'Value'
+

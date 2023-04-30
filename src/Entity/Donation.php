@@ -28,10 +28,8 @@ class Donation implements TimestampableInterface
     private $id;
 
     /**
-     * @var double
-     *
      * @Assert\NotNull
-     * @ORM\Column(name="value", type="decimal")
+     * @ORM\Column(name="value", type="decimal", precision=7, scale=2)
      */
     private $value;
 

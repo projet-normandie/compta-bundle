@@ -26,9 +26,7 @@ class Compta implements TimestampableInterface
     private $id;
 
     /**
-     * @var double
-     *
-     * @ORM\Column(name="value", type="decimal")
+     * @ORM\Column(name="value", type="decimal", precision=7, scale=2)
      */
     private $value;
 

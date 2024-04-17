@@ -6,6 +6,9 @@ ProjetNormandie\UserBundle\Entity\User:
     username:
       groups:
         - 'don.user.read'
+    slug:
+      groups:
+        - 'don.user.read'
     avatar:
       groups:
         - 'don.user.read'
